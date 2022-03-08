@@ -52,3 +52,8 @@ app.get('/movies', (req, res) => {
 app.get('/', (req, res) => {
     res.send('Welcome to your source on Movies!');
 });
+
+
+// Using the express.static function to serve files from the 'public' folder in the directory
+app.use(express.static('public'));
+
