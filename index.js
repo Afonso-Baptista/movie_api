@@ -57,3 +57,9 @@ app.get('/', (req, res) => {
 // Using the express.static function to serve files from the 'public' folder in the directory
 app.use(express.static('public'));
 
+
+
+// Listen to port 8080
+app.listen(8080, () => {
+  console.log('Your app is listening on port 8080.');
+});
