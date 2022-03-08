@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
 
+// Import Morgan middleware library, for logging info. on HTTP requests
+const morgan = require('morgan');
+app.use(morgan('common'));
+
 let topTenMovies = [
     {
         title: 'The Shawshank Redemption',
@@ -53,10 +57,8 @@ app.get('/', (req, res) => {
     res.send('Welcome to your source on Movies!');
 });
 
-
 // Using the express.static function to serve files from the 'public' folder in the directory
 app.use(express.static('public'));
-
 
 
 // Listen to port 8080
